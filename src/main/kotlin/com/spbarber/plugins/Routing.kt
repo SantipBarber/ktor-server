@@ -47,7 +47,9 @@ fun Application.configureRouting() {
             put {
                 try {
                     val note = call.receive<Note>()
+
                     if (NotesRepository.update(note)) {
+                        println("Nota a actualizar $note")
                         call.respond(note)
                     } else {
                         call.respond(
