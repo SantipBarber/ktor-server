@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.8.22"
     id("io.ktor.plugin") version "2.3.1"
     kotlin("plugin.serialization") version "1.8.22"
+    id("com.squareup.sqldelight") version "1.5.4"
 }
 
 group = "com.spbarber"
@@ -21,6 +22,12 @@ repositories {
     mavenCentral()
 }
 
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.spbarber.kotlinexpert.database"
+    }
+}
+
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
@@ -33,5 +40,7 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+
+    implementation("com.squareup.sqldelight:sqlite-driver:1.5.4")
 
 }
