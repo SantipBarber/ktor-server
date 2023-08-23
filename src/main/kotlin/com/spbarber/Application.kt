@@ -25,6 +25,8 @@ fun Application.module() {
         allowHeader(HttpHeaders.AccessControlAllowOrigin)
         allowMethod(HttpMethod.Put)
         allowMethod(HttpMethod.Delete)
+        allowHeader(HttpHeaders.Authorization)
+        allowCredentials = true
         anyHost()
     }
     // DatabaseFactory.init(environment.config)
