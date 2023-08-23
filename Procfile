@@ -1,0 +1,1 @@
+web: ./build/install/com.spbarber.mynotes-server/bin/com.spbarber.mynotes-server
