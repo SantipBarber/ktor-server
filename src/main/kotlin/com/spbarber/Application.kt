@@ -21,11 +21,11 @@ fun Application.module() {
     configureSerialization()
     configureRouting()
     install(CORS){
-        anyHost()
         allowNonSimpleContentTypes
         allowHeader(HttpHeaders.AccessControlAllowOrigin)
         allowMethod(HttpMethod.Put)
         allowMethod(HttpMethod.Delete)
+        anyHost()
     }
     // DatabaseFactory.init(environment.config)
     // configureRouting()
