@@ -14,6 +14,13 @@ plugins {
 
 group = "com.spbarber"
 version = "0.0.1"
+
+tasks.register("stage") {
+    dependsOn("clean")
+    dependsOn("build")
+    dependsOn("installDist")
+}
+
 application {
      //mainClass.set("com.spbarber.ApplicationKt")
      //val isDevelopment: Boolean = project.ext.has("development")
@@ -58,10 +65,4 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-dao:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
-}
-
-tasks.create("stage") {
-    dependsOn("clean")
-    dependsOn("build")
-    dependsOn("installDist")
 }
