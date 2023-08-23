@@ -16,8 +16,6 @@ group = "com.spbarber"
 version = "0.0.1"
 
 tasks.register("stage") {
-    dependsOn("clean")
-    dependsOn("build")
     dependsOn("installDist")
 }
 
