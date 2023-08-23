@@ -19,6 +19,11 @@ tasks.register("stage") {
     dependsOn("installDist")
 }
 
+tasks.register("heroku") {
+    dependsOn("stage")
+}
+
+
 application {
      //mainClass.set("com.spbarber.ApplicationKt")
      //val isDevelopment: Boolean = project.ext.has("development")
