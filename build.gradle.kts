@@ -61,5 +61,6 @@ dependencies {
 }
 
 tasks.create("stage") {
-    dependsOn("installDist")
+    dependsOn("build")
+    dependsOn("clean")
 }
