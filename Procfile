@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/com.spbarber.mynotes-server-0.0.1.jar
+web: ./build/install/com.spbarber.mynotes-server/bin/com.spbarber.mynotes-server
